@@ -1,0 +1,15 @@
+apiVersion:apps/v1
+kind: Deployment
+metadata:
+    name: bank-app
+spec:
+    replicas: 2
+    selector:
+       matchlabels:
+         app: bank
+    spec:
+       containers:
+       -  name: bank
+          image: nginx:1.21
+          ports:
+          - containerport:80
